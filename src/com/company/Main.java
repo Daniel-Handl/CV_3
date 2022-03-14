@@ -82,6 +82,7 @@ public class Main {
         for (int y = 0; y<8; y++){
             System.out.print("\n " + (9-(y+1)) + " |");
             for (int x = 0; x<8; x++){
+                //barvy jsou stejně hnusný xd
                 System.out.print(" " + board[x][y][0] + " |");
             }
         }
