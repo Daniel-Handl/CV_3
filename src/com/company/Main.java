@@ -50,7 +50,7 @@ public class Main {
             if (player == 2 && des.y < pos.y) return true;
         }
         if (Math.abs( pos.x - des.x) == 3 && Math.abs( pos.y - des.y) == 3){
-            if (board[des.x][des.y][0] == 0 && board[(des.x+pos.x)/2][(des.y+pos.y)/2][0] == 0){
+            if (board[des.x][des.y][0] == 0 && board[(des.x+pos.x)/2][(des.y+pos.y)/2][0] != 0 && board[(des.x+pos.x)/2][(des.y+pos.y)/2][0] != player){
                 if (player == 1 && des.y > pos.y) return true;
                 if (player == 2 && des.y < pos.y) return true;
             }
