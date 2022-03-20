@@ -21,8 +21,7 @@ public class Main {
              do {
                  System.out.println("Hráči " + player + " zadej pozici fugurky(xy)<11;88>");
                      pos = Translate(Integer.parseInt(scan.nextLine()));
-                     if (board[pos.x][pos.y][0] == player) pick = true;
-                     else pick = false;
+                 pick = board[pos.x][pos.y][0] == player;
              } while (!pick);
              boolean pick_2;
              Show(board);
@@ -49,10 +48,10 @@ public class Main {
             if (player == 1 && des.y > pos.y) return true;
             if (player == 2 && des.y < pos.y) return true;
         }
-        if (Math.abs( pos.x - des.x) == 3 && Math.abs( pos.y - des.y) == 3){
+        if (Math.abs( pos.x - des.x) == 2 && Math.abs( pos.y - des.y) == 2){
             if (board[des.x][des.y][0] == 0 && board[(des.x+pos.x)/2][(des.y+pos.y)/2][0] != 0 && board[(des.x+pos.x)/2][(des.y+pos.y)/2][0] != player){
                 if (player == 1 && des.y > pos.y) return true;
-                if (player == 2 && des.y < pos.y) return true;
+                return player == 2 && des.y < pos.y;
             }
         }
         return false;
